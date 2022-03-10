@@ -25,7 +25,7 @@ class Ship {
 		int hits;
 		std::string name;
 		int chr;
-	public:
+	
 		friend std::ostream& operator<<(std::ostream& os, Ship const& s){
 			os << s.name << " [" << s.spaces << " spaces]";
 			return os;
