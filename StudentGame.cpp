@@ -46,15 +46,15 @@ void Game::beginGame(){
 
 
 	
-
-
-	for(int i=0; i < HEIGHT; i++){
-		for(int j=0; j < WIDTH;j++){
-			player_board->operator[](i).operator[](j)=00;
+	for(int i=0;i<HEIGHT;i++){
+		for(int j=0;j<WIDTH;j++){
+			player_board->operator[](i).operator[](j)=0;
 		}
 	}
+
 	
-	std::cout <<*player_board << std::endl;
+	std::cout<< *player_board<<std::endl;
+	
 
 	placeShips();
 
@@ -78,8 +78,10 @@ void Game::placeShips(){
 
 	
 
-	for(int i = 0; i < 6;i++){
+	for(int i = 0; i < ships.size();i++){
 		std::cout<<"where do you want to place " << ships[i] << std::endl;
+		x=0;
+		y=0;
 		std::cin >> x >> y;
 		std::cout<< "Horizontal (0) or Vertical (1)"<<std::endl;
 		std::cin>> tmp;
@@ -87,6 +89,9 @@ void Game::placeShips(){
 		else user_dir = HORIZONTAL;
 		
 		do{
+			
+			
+				
 			status=place(x,y,user_dir,ships[i],*player_board);
 			if(status == false){
 				std::cout<<"Lets try that again"<<std::endl;
@@ -96,8 +101,11 @@ void Game::placeShips(){
 				if(tmp == 1) user_dir = VERTICAL;
 				else user_dir = HORIZONTAL;
 			}
+			
 		}while(status==false);
 			
+
+		
 		std::cout <<*player_board << std::endl;
 
 	}
@@ -122,47 +130,52 @@ void Game::placeShipsPC(){
  * at a particular spot with a particular direction.
  */
 bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& b){
+	if(WIDTH-1 == x || HEIGHT-1 == y) return false;
 
 	BoardValues boardVal = EMPTY;
 	if(d==HORIZONTAL){
-		std::cout<<"Attempting horizontal placement"<<std::endl;
+		std::cout<<"Attempting horizontal placement at "<<x<<", "<<y<<std::endl;
+		
 		for(int v=0; v< s.getSpaces(); v++){
-			if(b.operator[](x).operator[](y+v) == 66 ||
-				b.operator[](x).operator[](y+v) == 67 ||
-				b.operator[](x).operator[](y+v) == 68 ||
-				b.operator[](x).operator[](y+v) == 80 ||
-				b.operator[](x).operator[](y+v) == 83)
+			if(b.operator[](y).operator[](x+v) == 66 ||
+				b.operator[](y).operator[](x+v) == 67 ||
+				b.operator[](y).operator[](x+v) == 68 ||
+				b.operator[](y).operator[](x+v) == 80 ||
+				b.operator[](y).operator[](x+v) == 83)
 
 				return false;
 		}
-		if(x==WIDTH-1) return false;
+			
 		if(x+s.getSpaces() > WIDTH) return false;
 		for(int v=0; v< s.getSpaces();v++){
-			b.operator[](x).operator[](y+v)= (int)s.getChr();
+			b.operator[](y).operator[](x+v)= (int)s.getChr();
 		}
 		
-
+		
 
 		return true;
 
 	}
 	if(d==VERTICAL){
-		std::cout<<"Attempting vertical placement"<<std::endl;
+		std::cout<<"Attempting vertical placement at "<<x<<", "<<y<<std::endl;
+
 		for(int v=0; v < s.getSpaces();v++){
-			if(b.operator[](x+v).operator[](y) == 66 ||
-				b.operator[](x+v).operator[](y) == 67 ||
-				b.operator[](x+v).operator[](y) == 68 ||
-				b.operator[](x+v).operator[](y) == 80 ||
-				b.operator[](x+v).operator[](y) == 83 )
+			if(b.operator[](y+v).operator[](x) == 66 ||
+				b.operator[](y+v).operator[](x) == 67 ||
+				b.operator[](y+v).operator[](x) == 68 ||
+				b.operator[](y+v).operator[](x) == 80 ||
+				b.operator[](y+v).operator[](x) == 83 )
 
 				return false;
 		}
 		if(y== HEIGHT -1) return false;
 		if(y+s.getSpaces() > HEIGHT) return false;
 		for(int v=0; v <s.getSpaces();v++){
-			b.operator[](x+v).operator[](y) = (int)s.getChr();
+			b.operator[](y+v).operator[](x) = (int)s.getChr();
 		}
 
+
+	
 		
 
 

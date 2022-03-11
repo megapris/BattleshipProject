@@ -34,6 +34,8 @@ class Board {
 	private:
 		int* grid;
 		bool visible;
+		int* grido = new int[100];
+
 	
 	friend std::ostream& operator<<(std::ostream& os, Board const& b);
 
