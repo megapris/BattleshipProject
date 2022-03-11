@@ -32,7 +32,7 @@ Game::Game(){
 	ships.push_back(*barcos[3]);
 	ships.push_back(*barcos[4]);
 
-	// std::cout << *ships[0] << std::endl;
+	
 	
 
 }
@@ -45,19 +45,16 @@ void Game::beginGame(){
 	pc_board = new Board;
 
 
+	
+
+
 	for(int i=0; i < HEIGHT; i++){
 		for(int j=0; j < WIDTH;j++){
 			player_board->operator[](i).operator[](j)=00;
 		}
 	}
 	
-	for(int i=0; i < HEIGHT; i++){
-		for(int j=0; j < WIDTH;j++){
-			std::cout<<player_board->operator[](i).operator[](j)<<" ";
-		}
-		std::cout<<'\n';
-
-	}
+	std::cout <<*player_board << std::endl;
 
 	placeShips();
 
@@ -101,16 +98,7 @@ void Game::placeShips(){
 			}
 		}while(status==false);
 			
-		
-
-		
-		for(int i=0; i < HEIGHT; i++){
-			for(int j=0; j < WIDTH;j++){
-				std::cout<<player_board->operator[](i).operator[](j)<<" ";
-			}
-		std::cout<<'\n';
-
-		}
+		std::cout <<*player_board << std::endl;
 
 	}
 	
