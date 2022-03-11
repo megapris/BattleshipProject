@@ -51,9 +51,9 @@ Board::Internal Board::operator[](int index){
 }
 
 std::ostream& operator<<(std::ostream& os, Board const& b){
-    // int inc=0;
 
-    os << "hola, imprime";
+    
+    
     for(int i=0; i< HEIGHT;i++){
         for(int j=0; j < WIDTH; j++){
             os<<*(b.grid + i * WIDTH + j)<< " ";
@@ -62,7 +62,7 @@ std::ostream& operator<<(std::ostream& os, Board const& b){
         os << '\n';
     }
 
-    
+    return os;
 
 }
 // count the number of hits
