@@ -7,6 +7,7 @@
 
 
 
+
 Board* player_board; 
 Board* pc_board; 
 
@@ -56,7 +57,7 @@ void Game::beginGame(){
 	std::cout<< *player_board<<std::endl;
 	
 
-	placeShips();
+	placeShipsPC();
 
 	
 
@@ -123,6 +124,37 @@ void Game::placeShips(){
  * Handle the computer placing ships.
  */
 void Game::placeShipsPC(){
+	std::default_random_engine generator;
+	std::uniform_int_distribution<int> distribution(0,9);
+	int coord_roll = distribution(generator);  // generates number in the range 1..6 
+	auto coord = std::bind ( distribution, generator );
+	
+
+	int x =0;
+	int y =0;
+	srand(time(0));
+	bool status = false;
+
+	for(int i=0; i < ships.size(); i++){
+		
+
+		do
+		{
+			x= coord();
+			y=coord();
+			int dir = rand() % 2;
+			
+			if(dir ==0) status =place(x,y,HORIZONTAL,ships[i],*pc_board);
+			
+			else status = place(x,y,VERTICAL,ships[i],*pc_board);
+			
+			
+		} while (status==false);
+		
+		std::cout <<*pc_board << std::endl;
+		
+	}
+
 }
 
 /**
