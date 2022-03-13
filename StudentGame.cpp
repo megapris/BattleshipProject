@@ -57,7 +57,11 @@ void Game::beginGame(){
 	std::cout<< *player_board<<std::endl;
 	
 
+	// placeShips();
+	std::cout<<"Computer's turn"<<std::endl;
 	placeShipsPC();
+	humanTurn();
+	std::cout<< *pc_board<<std::endl;
 
 	
 
@@ -162,23 +166,43 @@ void Game::placeShipsPC(){
  * at a particular spot with a particular direction.
  */
 bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& b){
-	if(WIDTH-1 == x || HEIGHT-1 == y) return false;
+	if(WIDTH-1 == x && d == HORIZONTAL) {
+		std::cout<<"widt x"<<std::endl;
+		return false;
+	}
+	if(HEIGHT-1 == y && d == VERTICAL){
+		std::cout<<"height y"<<std::endl;
+		return false;
+	}
 
-	BoardValues boardVal = EMPTY;
+	if(x+s.getSpaces() > WIDTH){
+		std::cout<<"error val "<< x+s.getSpaces() << std::endl;
+		return false;
+	}
+	if(y+s.getSpaces() > HEIGHT) return false;
 	if(d==HORIZONTAL){
+
 		std::cout<<"Attempting horizontal placement at "<<x<<", "<<y<<std::endl;
+		std::cout<<"error val "<< x+s.getSpaces() << std::endl;
 		
 		for(int v=0; v< s.getSpaces(); v++){
+			
 			if(b.operator[](y).operator[](x+v) == 66 ||
 				b.operator[](y).operator[](x+v) == 67 ||
 				b.operator[](y).operator[](x+v) == 68 ||
 				b.operator[](y).operator[](x+v) == 80 ||
-				b.operator[](y).operator[](x+v) == 83)
+				b.operator[](y).operator[](x+v) == 83){
 
+				std::cout<<"for error"<<std::endl;
 				return false;
+					
+				}
+
+
 		}
+
 			
-		if(x+s.getSpaces() > WIDTH) return false;
+
 		for(int v=0; v< s.getSpaces();v++){
 			b.operator[](y).operator[](x+v)= (int)s.getChr();
 		}
@@ -196,12 +220,14 @@ bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& 
 				b.operator[](y+v).operator[](x) == 67 ||
 				b.operator[](y+v).operator[](x) == 68 ||
 				b.operator[](y+v).operator[](x) == 80 ||
-				b.operator[](y+v).operator[](x) == 83 )
+				b.operator[](y+v).operator[](x) == 83 ){
+					std::cout<<"for error"<<std::endl;
 
-				return false;
+					return false;
+				}
 		}
-		if(y== HEIGHT -1) return false;
-		if(y+s.getSpaces() > HEIGHT) return false;
+		
+		
 		for(int v=0; v <s.getSpaces();v++){
 			b.operator[](y+v).operator[](x) = (int)s.getChr();
 		}
@@ -223,6 +249,32 @@ void Game::run(){
 }
 
 void Game::humanTurn(){
+	std::cout<<"where do you want to attack?"<<std::endl;
+	int x = 0;
+	int y =0;
+
+	std::cin >> x >> y;
+
+	std::cout<<"attempting to attack "<<x<<","<<y<<" and the value is: "<<std::endl;
+
+
+	if(pc_board->operator[](y).operator[](x) == 66 ||
+				pc_board->operator[](y).operator[](x) == 67 ||
+				pc_board->operator[](y).operator[](x) == 68 ||
+				pc_board->operator[](y).operator[](x) == 80 ||
+				pc_board->operator[](y).operator[](x) == 83){
+					std::cout<<"player successful attack"<<std::endl;
+					pc_board->operator[](y).operator[](x) =42;
+				}
+	else{
+			pc_board->operator[](y).operator[](x) = 95;
+
+	}
+
+
+			
+
+
 }
 
 void Game::computerTurn(){

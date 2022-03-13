@@ -6,24 +6,24 @@
 
 
 Board::Board(){
-    grid = new int[WIDTH * HEIGHT];
-    visible = true;
+    this->grid = new int[WIDTH * HEIGHT];
+    this->visible = true;
 
 }
 
 Board::Board(const Board& other){
-    // // the first field we copy
-    // visible = other.visible;
+    // the first field we copy
+    this->visible = other.visible;
 
-    // // since it is a pointer
-    // grid = new int[WIDTH * HEIGHT];
+    // since it is a pointer
+    this->grid = new int[WIDTH * HEIGHT];
 
-    // // now we copy the old values in
-    // for(int i = 0; i < HEIGHT; i++){
-    //     for(int j =0; j <WIDTH;j++){
-    //         grid[i][j]= other.grid[i][j];
-    //     }
-    // }
+    // now we copy the old values in
+    for(int i = 0; i < HEIGHT; i++){
+        for(int j =0; j <WIDTH;j++){
+            this->grid[i]= other.grid[i];
+        }
+    }
 }
 
 Board& Board::operator=(Board& other){
@@ -74,6 +74,11 @@ std::ostream& operator<<(std::ostream& os, Board const& b){
             if(*(b.grid + i * WIDTH + j) == 68) os<< "D";
             if(*(b.grid + i * WIDTH + j) == 80) os<< "P";
             if(*(b.grid + i * WIDTH + j) == 83) os<< "S";
+            
+            if(*(b.grid + i * WIDTH + j) == 42) os<< "*";
+            if(*(b.grid + i * WIDTH + j) == 95) os<< "-";
+
+
             if(*(b.grid + i * WIDTH + j) == 0) os<< "j";
             
 
@@ -87,11 +92,21 @@ std::ostream& operator<<(std::ostream& os, Board const& b){
 }
 // count the number of hits
 int Board::count() const{
+    int hits=0;
+    for(int i=0; i < WIDTH;i++){
+        for(int j=0; j < HEIGHT; j++){
+            if(*(this->grid + i * WIDTH + j) == 42)
+                hits++;
+        }
+    }
+    return hits;
+
 }
 
 // compare to
 bool Board::operator< (const Board& other){
-    
+
+    return this->count() < other.count();
 
 }
 void Board::setVisible(bool v){
