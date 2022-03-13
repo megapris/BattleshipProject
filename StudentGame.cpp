@@ -56,16 +56,10 @@ void Game::beginGame(){
 	
 	std::cout<< *player_board<<std::endl;
 	
-
-	// placeShips();
+	placeShips();
 	std::cout<<"Computer's turn"<<std::endl;
 	placeShipsPC();
-	humanTurn();
-	std::cout<< *pc_board<<std::endl;
-
-	
-
-
+	run();
 	
 }
 
@@ -93,10 +87,7 @@ void Game::placeShips(){
 		if(tmp == 1) user_dir = VERTICAL;
 		else user_dir = HORIZONTAL;
 		
-		do{
-			
-			
-				
+		do{	
 			status=place(x,y,user_dir,ships[i],*player_board);
 			if(status == false){
 				std::cout<<"Lets try that again"<<std::endl;
@@ -108,19 +99,11 @@ void Game::placeShips(){
 			}
 			
 		}while(status==false);
-			
-
-		
+	
 		std::cout <<*player_board << std::endl;
 
 	}
-	
-	
 
-
-	
-
-	
 
 }
 
@@ -133,15 +116,12 @@ void Game::placeShipsPC(){
 	int coord_roll = distribution(generator);  // generates number in the range 1..6 
 	auto coord = std::bind ( distribution, generator );
 	
-
 	int x =0;
 	int y =0;
 	srand(time(0));
 	bool status = false;
 
 	for(int i=0; i < ships.size(); i++){
-		
-
 		do
 		{
 			x= coord();
@@ -150,8 +130,7 @@ void Game::placeShipsPC(){
 			
 			if(dir ==0) status =place(x,y,HORIZONTAL,ships[i],*pc_board);
 			
-			else status = place(x,y,VERTICAL,ships[i],*pc_board);
-			
+			else status = place(x,y,VERTICAL,ships[i],*pc_board);		
 			
 		} while (status==false);
 		
@@ -175,11 +154,14 @@ bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& 
 		return false;
 	}
 
-	if(x+s.getSpaces() > WIDTH){
+	if(x+s.getSpaces() > WIDTH && d==HORIZONTAL){
 		std::cout<<"error val "<< x+s.getSpaces() << std::endl;
 		return false;
 	}
-	if(y+s.getSpaces() > HEIGHT) return false;
+	if(y+s.getSpaces() > HEIGHT && d == VERTICAL){
+		std::cout<<"error y+s.getSpaces"<<std::endl;
+		return false;
+	}
 	if(d==HORIZONTAL){
 
 		std::cout<<"Attempting horizontal placement at "<<x<<", "<<y<<std::endl;
@@ -197,18 +179,12 @@ bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& 
 				return false;
 					
 				}
-
-
 		}
-
-			
 
 		for(int v=0; v< s.getSpaces();v++){
 			b.operator[](y).operator[](x+v)= (int)s.getChr();
 		}
 		
-		
-
 		return true;
 
 	}
@@ -225,28 +201,15 @@ bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& 
 
 					return false;
 				}
-		}
-		
-		
+		}		
 		for(int v=0; v <s.getSpaces();v++){
 			b.operator[](y+v).operator[](x) = (int)s.getChr();
 		}
-
-
-	
-		
-
-
-
 		return true;
 	}
 }
 
-/**
- * Call human turn/computer turn until someone wins.
- */
-void Game::run(){
-}
+
 
 void Game::humanTurn(){
 	std::cout<<"where do you want to attack?"<<std::endl;
@@ -255,7 +218,7 @@ void Game::humanTurn(){
 
 	std::cin >> x >> y;
 
-	std::cout<<"attempting to attack "<<x<<","<<y<<" and the value is: "<<std::endl;
+	std::cout<<"attempting to attack "<<x<<","<<y<<" and the value is: "<<pc_board->operator[](y).operator[](x)<<std::endl;
 
 
 	if(pc_board->operator[](y).operator[](x) == 66 ||
@@ -278,6 +241,65 @@ void Game::humanTurn(){
 }
 
 void Game::computerTurn(){
+	std::default_random_engine generator;
+	std::uniform_int_distribution<int> distribution(0,9);
+	int coord_roll = distribution(generator);  
+	auto coord = std::bind ( distribution, generator );
+	
+	int x =coord();
+	int y =coord();
+
+	std::cout<<"pc attacking "<<x<<","<<y<<std::endl;
+
+	if(player_board->operator[](y).operator[](x) == 66 ||
+				player_board->operator[](y).operator[](x) == 67 ||
+				player_board->operator[](y).operator[](x) == 68 ||
+				player_board->operator[](y).operator[](x) == 80 ||
+				player_board->operator[](y).operator[](x) == 83){
+					std::cout<<"player successful attack"<<std::endl;
+					player_board->operator[](y).operator[](x) =42;
+				}
+	else{
+			player_board->operator[](y).operator[](x) = 95;
+
+	}
+	
+}
+/**
+ * Call human turn/computer turn until someone wins.
+ */
+void Game::run(){
+	int player_hits=0;
+	int pc_hits=0;
+
+	bool play = true;
+
+	do{
+		if(play){
+			humanTurn();
+			
+			computerTurn();
+
+			std::cout<<"your board"<<std::endl;
+			std::cout<< *player_board<<std::endl;
+
+			std::cout<<"pc board"<<std::endl;
+			std::cout<< *pc_board<<std::endl;
+
+			player_hits = pc_board->count();
+			pc_hits = player_board->count();
+
+			std::cout<<"player hits "<< player_hits << " pc hits " << pc_hits<<std::endl;
+			if(pc_hits> player_hits) std::cout<<"PC is winning"<<std::endl;
+			else std::cout<<"Planer is winning"<<std::endl;
+
+			if(player_hits == 17 || pc_hits == 17){
+				play=false;
+			}
+		}
+	}while(play);
+
+
 }
 
 void Game::hello(){

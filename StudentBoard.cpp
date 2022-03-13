@@ -55,21 +55,13 @@ Board::Internal Board::operator[](int index){
 
 std::ostream& operator<<(std::ostream& os, Board const& b){
 
-    // int i =0;
-    // int j=0;
-    // int n =WIDTH;
-    // os << *b.grid + i *n +j << " ";
-    // i=0;
-    // j=1;
-    // os<< *b.grid + i *n +j;
-
     std::string boat = " ";
     os<<"   0  1  2  3  4  5  6  7  8  9"<<'\n';
     os<<"-------------------------------"<<'\n';
     for(int i=0;i<WIDTH;i++){
         os<<i<<" |";
         for(int j=0;j< HEIGHT;j++){
-            if(*(b.grid + i * WIDTH + j) == 66) os<<"B";
+            if(*(b.grid + i * WIDTH + j) == 66) os<< "B";
             if(*(b.grid + i * WIDTH + j) == 67) os<< "C";
             if(*(b.grid + i * WIDTH + j) == 68) os<< "D";
             if(*(b.grid + i * WIDTH + j) == 80) os<< "P";
@@ -79,7 +71,7 @@ std::ostream& operator<<(std::ostream& os, Board const& b){
             if(*(b.grid + i * WIDTH + j) == 95) os<< "-";
 
 
-            if(*(b.grid + i * WIDTH + j) == 0) os<< "j";
+            if(*(b.grid + i * WIDTH + j) == 0) os<< " ";
             
 
             os <<boat<<" ";
