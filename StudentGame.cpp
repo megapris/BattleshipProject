@@ -58,6 +58,7 @@ void Game::beginGame(){
 	
 	placeShips();
 	std::cout<<"Computer's turn"<<std::endl;
+	pc_board->setVisible(false);
 	placeShipsPC();
 	run();
 	
@@ -111,10 +112,9 @@ void Game::placeShips(){
  * Handle the computer placing ships.
  */
 void Game::placeShipsPC(){
-	std::default_random_engine generator;
-	std::uniform_int_distribution<int> distribution(0,9);
-	int coord_roll = distribution(generator);  // generates number in the range 1..6 
-	auto coord = std::bind ( distribution, generator );
+	std::random_device rd;  //Will be used to obtain a seed for the random number engine
+    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<> distrib(0,9);
 	
 	int x =0;
 	int y =0;
@@ -124,8 +124,8 @@ void Game::placeShipsPC(){
 	for(int i=0; i < ships.size(); i++){
 		do
 		{
-			x= coord();
-			y=coord();
+			x= distrib(gen);
+			y=distrib(gen);
 			int dir = rand() % 2;
 			
 			if(dir ==0) status =place(x,y,HORIZONTAL,ships[i],*pc_board);
@@ -134,7 +134,7 @@ void Game::placeShipsPC(){
 			
 		} while (status==false);
 		
-		std::cout <<*pc_board << std::endl;
+		// std::cout <<*pc_board << std::endl;
 		
 	}
 
@@ -146,26 +146,26 @@ void Game::placeShipsPC(){
  */
 bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& b){
 	if(WIDTH-1 == x && d == HORIZONTAL) {
-		std::cout<<"widt x"<<std::endl;
+		// std::cout<<"widt x"<<std::endl;
 		return false;
 	}
 	if(HEIGHT-1 == y && d == VERTICAL){
-		std::cout<<"height y"<<std::endl;
+		// std::cout<<"height y"<<std::endl;
 		return false;
 	}
 
 	if(x+s.getSpaces() > WIDTH && d==HORIZONTAL){
-		std::cout<<"error val "<< x+s.getSpaces() << std::endl;
+		// std::cout<<"error val "<< x+s.getSpaces() << std::endl;
 		return false;
 	}
 	if(y+s.getSpaces() > HEIGHT && d == VERTICAL){
-		std::cout<<"error y+s.getSpaces"<<std::endl;
+		// std::cout<<"error y+s.getSpaces"<<std::endl;
 		return false;
 	}
 	if(d==HORIZONTAL){
 
 		std::cout<<"Attempting horizontal placement at "<<x<<", "<<y<<std::endl;
-		std::cout<<"error val "<< x+s.getSpaces() << std::endl;
+		// std::cout<<"error val "<< x+s.getSpaces() << std::endl;
 		
 		for(int v=0; v< s.getSpaces(); v++){
 			
@@ -175,7 +175,7 @@ bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& 
 				b.operator[](y).operator[](x+v) == 80 ||
 				b.operator[](y).operator[](x+v) == 83){
 
-				std::cout<<"for error"<<std::endl;
+				// std::cout<<"for error"<<std::endl;
 				return false;
 					
 				}
@@ -197,7 +197,7 @@ bool Game::place(const int& x, const int& y, Direction d, const Ship& s, Board& 
 				b.operator[](y+v).operator[](x) == 68 ||
 				b.operator[](y+v).operator[](x) == 80 ||
 				b.operator[](y+v).operator[](x) == 83 ){
-					std::cout<<"for error"<<std::endl;
+					// std::cout<<"for error"<<std::endl;
 
 					return false;
 				}
@@ -226,13 +226,14 @@ void Game::humanTurn(){
 				pc_board->operator[](y).operator[](x) == 68 ||
 				pc_board->operator[](y).operator[](x) == 80 ||
 				pc_board->operator[](y).operator[](x) == 83){
-					std::cout<<"player successful attack"<<std::endl;
+
 					pc_board->operator[](y).operator[](x) =42;
 				}
-	else{
+	else if(pc_board->operator[](y).operator[](x) != 42){
 			pc_board->operator[](y).operator[](x) = 95;
 
 	}
+
 
 
 			
@@ -241,13 +242,12 @@ void Game::humanTurn(){
 }
 
 void Game::computerTurn(){
-	std::default_random_engine generator;
-	std::uniform_int_distribution<int> distribution(0,9);
-	int coord_roll = distribution(generator);  
-	auto coord = std::bind ( distribution, generator );
+	std::random_device rd;  //Will be used to obtain a seed for the random number engine
+    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<> distrib(0,9);
 	
-	int x =coord();
-	int y =coord();
+	int x= distrib(gen);
+	int y=distrib(gen);
 
 	std::cout<<"pc attacking "<<x<<","<<y<<std::endl;
 
@@ -256,10 +256,10 @@ void Game::computerTurn(){
 				player_board->operator[](y).operator[](x) == 68 ||
 				player_board->operator[](y).operator[](x) == 80 ||
 				player_board->operator[](y).operator[](x) == 83){
-					std::cout<<"player successful attack"<<std::endl;
+					// std::cout<<"player successful attack"<<std::endl;
 					player_board->operator[](y).operator[](x) =42;
 				}
-	else{
+	else if(player_board->operator[](y).operator[](x) != 42){
 			player_board->operator[](y).operator[](x) = 95;
 
 	}
@@ -290,7 +290,8 @@ void Game::run(){
 			pc_hits = player_board->count();
 
 			std::cout<<"player hits "<< player_hits << " pc hits " << pc_hits<<std::endl;
-			if(pc_hits> player_hits) std::cout<<"PC is winning"<<std::endl;
+			if(pc_hits == player_hits) std::cout<<"no one is winning"<<std::endl;
+			else if(pc_hits> player_hits) std::cout<<"PC is winning"<<std::endl;
 			else std::cout<<"Planer is winning"<<std::endl;
 
 			if(player_hits == 17 || pc_hits == 17){

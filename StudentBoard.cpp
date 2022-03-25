@@ -53,7 +53,7 @@ Board::Internal Board::operator[](int index){
         return Board::Internal(grid+(index * WIDTH));
 }
 
-std::ostream& operator<<(std::ostream& os, Board const& b){
+std::ostream& operator<<(std::ostream& os, Board & b){
 
     std::string boat = " ";
     os<<"   0  1  2  3  4  5  6  7  8  9"<<'\n';
@@ -61,14 +61,25 @@ std::ostream& operator<<(std::ostream& os, Board const& b){
     for(int i=0;i<WIDTH;i++){
         os<<i<<" |";
         for(int j=0;j< HEIGHT;j++){
-            if(*(b.grid + i * WIDTH + j) == 66) os<< "B";
-            if(*(b.grid + i * WIDTH + j) == 67) os<< "C";
-            if(*(b.grid + i * WIDTH + j) == 68) os<< "D";
-            if(*(b.grid + i * WIDTH + j) == 80) os<< "P";
-            if(*(b.grid + i * WIDTH + j) == 83) os<< "S";
+
+   
+
+            if(b[i][j] == 66 && b.visible == true) os<< "B";
+            if(*(b.grid + i * WIDTH + j) == 67 && b.visible == true) os<< "C";
+            if(*(b.grid + i * WIDTH + j) == 68 && b.visible == true) os<< "D";
+            if(*(b.grid + i * WIDTH + j) == 80 && b.visible == true) os<< "P";
+            if(*(b.grid + i * WIDTH + j) == 83 && b.visible == true) os<< "S";
+
+            if(b[i][j] == 66 && b.visible == false) os<< " ";
+            if(*(b.grid + i * WIDTH + j) == 67 && b.visible == false) os<< " ";
+            if(*(b.grid + i * WIDTH + j) == 68 && b.visible == false) os<< " ";
+            if(*(b.grid + i * WIDTH + j) == 80 && b.visible == false) os<< " ";
+            if(*(b.grid + i * WIDTH + j) == 83 && b.visible == false) os<< " ";
             
+
+
             if(*(b.grid + i * WIDTH + j) == 42) os<< "*";
-            if(*(b.grid + i * WIDTH + j) == 95) os<< "-";
+            if(*(b.grid + i * WIDTH + j) == 95 && *(b.grid + i * WIDTH + j) != 42) os<< "-";
 
 
             if(*(b.grid + i * WIDTH + j) == 0) os<< " ";
@@ -102,5 +113,5 @@ bool Board::operator< (const Board& other){
 
 }
 void Board::setVisible(bool v){
-
+    this->visible = v;
 }

@@ -37,7 +37,7 @@ class Board {
 		int* grido = new int[100];
 
 	
-	friend std::ostream& operator<<(std::ostream& os, Board const& b);
+	friend std::ostream& operator<<(std::ostream& os, Board & b);
 
 };
 
