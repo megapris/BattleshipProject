@@ -46,6 +46,7 @@ void Game::beginGame(){
 	pc_board = new Board;
 
 
+	hello();
 	
 	for(int i=0;i<HEIGHT;i++){
 		for(int j=0;j<WIDTH;j++){
@@ -96,7 +97,7 @@ void Game::placeShips(){
 				std::cout<< "Horizontal (0) or Vertical (1)"<<std::endl;
 				std::cin>> tmp;
 				if(tmp == 1) user_dir = VERTICAL;
-				else user_dir = HORIZONTAL;
+				if(tmp == 0) user_dir = HORIZONTAL;
 			}
 			
 		}while(status==false);
@@ -216,10 +217,14 @@ void Game::humanTurn(){
 	int x = 0;
 	int y =0;
 
-	std::cin >> x >> y;
+	do{
+		std::cin >> x >> y;
+		if(x >9|| y>9){
+			std::cout<<"Try again, values out of range"<<std::endl;
+		}
+	}while(x >9|| y>9);
 
 	std::cout<<"attempting to attack "<<x<<","<<y<<" and the value is: "<<pc_board->operator[](y).operator[](x)<<std::endl;
-
 
 	if(pc_board->operator[](y).operator[](x) == 66 ||
 				pc_board->operator[](y).operator[](x) == 67 ||
@@ -251,6 +256,7 @@ void Game::computerTurn(){
 
 	std::cout<<"pc attacking "<<x<<","<<y<<std::endl;
 
+	// if the coordinate contains a boat
 	if(player_board->operator[](y).operator[](x) == 66 ||
 				player_board->operator[](y).operator[](x) == 67 ||
 				player_board->operator[](y).operator[](x) == 68 ||
@@ -259,6 +265,9 @@ void Game::computerTurn(){
 					// std::cout<<"player successful attack"<<std::endl;
 					player_board->operator[](y).operator[](x) =42;
 				}
+
+
+	// makes sure a coordinate is not overwritten
 	else if(player_board->operator[](y).operator[](x) != 42){
 			player_board->operator[](y).operator[](x) = 95;
 
@@ -294,6 +303,7 @@ void Game::run(){
 			else if(pc_hits> player_hits) std::cout<<"PC is winning"<<std::endl;
 			else std::cout<<"Planer is winning"<<std::endl;
 
+			
 			if(player_hits == 17 || pc_hits == 17){
 				play=false;
 			}
@@ -305,6 +315,10 @@ void Game::run(){
 
 void Game::hello(){
 	std::cout<<"Hello welcome to the game" << '\n' << '\n';
+	std::cout<<"You have these sizes available"<<std::endl;
+
+	for(int i=0;i <ships.size();i++)
+		std::cout<<ships[i]<<std::endl;
 	
 
 }
