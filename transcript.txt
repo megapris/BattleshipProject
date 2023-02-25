@@ -1,0 +1,569 @@
+can you make a 400 word summary using this transcript from a seminar
+good morning everyone Welcome to our inaugural issue of gvsu quest
+we have created the series to showcase the breadth and depth of expertise we have as they relate to current issues
+and one of the important roles that we play as an academic institution is to be
+sense makers being sense makers is primarily framing
+the questions and helping navigate the multitude or the Infinity of resources
+that we are surrounded with so these events are really not meant to
+be the final answers but much more the beginning of a conversation
+so our first topic today is chat GPT and
+I'm thrilled to have a group of faculty and staff with the diversity of expertise and Pathways into this topic
+and we will start by doing the introduction and I will ask everyone to
+introduce themselves tell us who they are and why they're interested in this topic and I will go around the screen
+maybe starting with Corey thank you very much uh yeah my name is Corey Anton I'm a professor of
+communication studies in the School of Communications I regularly teach a graduate class called emerging
+communication Technologies and I'm very interested in the staff thank you Patrick
+hello everyone my name is Patrick Johnson I direct The Writing Center at Grand Valley State University in the Brooks College of interdisciplinary
+studies certainly this topic relates to the writing process and affects every section of first year writing as well as
+every writing class at the University and that very much hits home for The Writing Center so I'm here to join this
+conversation from that perspective thank you Patrick milosh good morning milostovich vice president
+for IIT and chief digital officer um the simplest answer it's part of my job Tech
+is involved in everything that we do and I'm always keeping an eye on the Innovation and things coming forward
+that could hopefully make all of our Lives easier and better thank you
+good morning everyone my name is Lauren I'm an associate professor in the department of writing I'm also the
+director of the digital studies minor I'm interested in this topic as someone who teaches writing because information
+literacy and what it means for Content creation and then also as someone who teaches about technology and what those
+new tools are and do and mean for our society thank you to husband
+good morning Ben reppin I'm the associate vice president for RIT and the chief technology officer I'm
+particularly interested in this topic to see how our vendors are integrating this technology our partners are integrating
+technology into their products and platforms some of our biggest partners are Forefront in the conversation right
+now Microsoft Google others so to see how it both serves staff in our daily roles but also how to prepare for it on
+the academic side and support that as well thank you Ben and cheers good morning everybody I'm Jared Moore
+I'm in the school of computing and I teach our artificial intelligence class so naturally these models fall right
+into the content of that and also my research area and interested in Creative coding so
+thank you so much for being here so uh we will start with a very basic question
+what is Chad trippity Jared all right so
+what it is and what it isn't um yeah so Chad gbt we've probably all heard is a large language model uh
+really it's been enabled by probably the last five years of advances I would say uh at its heart it's a deep learning
+model what is deep learning deep neural networks these sort of things we're seeing them deployed everywhere uh
+probably self-driving cars was the first place we've really seen them emerge and then over the last couple years
+different areas we've seen Dolly with the sort of image generation we've seen
+gpt2 and gpt3 which were actually precursors to chat GPT which were sort
+of the first models many of you may have seen or seen stories written about that auto-generate text so what is a large
+language model why is this a new iteration right so in the field of AI we've had text generation for maybe 40
+years minimum 1980s 1990s but I would say the real advances here with chat GPT
+are sort of its ability to infer context um and so it's a deep neural network
+which is massive um we don't have specifics on chat GPT but just to give you an idea of how
+large these models are when we say large language models we know gpt3 took 355
+GPU years of compute time to develop in about 4.6 million dollars of electricity
+and infrastructure cost and these neural networks are somewhat like a brain so to
+speak but they're connected by a number of numbers essentially they pass
+information around the size we know of gpt3 was 175 billion parameters so we're
+starting to get into very large neural scopes but what is Java GPT how does it
+actually work um with chat GPT you feed it a prompt and what this model does is it goes
+token by token or word by word in your prompt and then generates another word so when you feed it a prompt that's
+given into this network and it looks at each word in turn the internals of it
+allow it to process that and then it basically predicts the next word now what it does is it uses that next word
+and your prompt to then predict the next word which then predicts the next word so we end up with a sequence we can go
+up to about 2048 words in a row which is why we can give it a fairly long prompt and get some attention or get some you
+know meaningful or seemingly meaningful responses the self-attention though is probably
+the key part here for chat jpt that if we're all thinking about it allows it to infer context so when we give it a
+sentence like a robot must obey orders given it it is ambiguous to you and I we know hey
+it means a robot and so probably the biggest advance in chat GPT compared to
+earlier models is the network itself now can infer and
+make guesses as to what those ambiguous parts of language mean and that has really helped with the sequence
+generation aspect of things and again though this model is just generating word by word by word
+excellent thank you so much Jared and I'm trying for each one of these questions I'll get two different
+perspectives um so Lawrence is there anything you'd like to add to to this question I don't
+have the technical knowledge that Jared has and I'm not going to pretend that I do but I will say listening to Jared and
+having read quite a bit about it it is impressive but it's not magic and I really
+appreciated how Jared described this right it's basically based on probability so we call it intelligence
+but I think it's also worthwhile remembering that it's not the same as the human brain it's not cognition we
+can make the argument that we too we're learning by having seen right reading
+makes us smarter but I don't have to read a million books in order to complete simple tasks just like I can
+use one example and be able to make an inference so when we're thinking about the data set and the amount of data
+those models require it's just worth remembering what these models are and
+just to go back to what Jared said what they are not
+thank you thank you and and we'll keep coming back to this question obviously what is an intelligence system so
+um maybe the continuing with that and before I get to the next question I uh
+um Jared said seemingly meaningful and I I we will iterate on that
+um so maybe um
+um let's see um going to Ben and milosh and you can take it in
+whichever order um uh so uh Jared mentioned the amount
+of computation power that this took so tell us a little bit the I we know that
+progress and artificial intelligence is as old as Computing and progress has
+been in stopped some of the steps have been small and some have been gigantic so can you give a can you help us
+understand a little bit what was the step here is it in storage is it in GPU
+is it in algorithm or all of the above
+so I think simply it's it's a mixture of all of the above but it's also the availability and the the
+lessening cost of those resources so like Jared mentioned this has been around for decades but decades ago if
+you wanted to do this you would have to spin up all of that technology in a building in a data center that you owned
+and you would have to supply all of the servers and GPU and storage on site to
+do that and with the advances and the the cost decreases in cloud computing it
+allows anybody to do that spin up these models relatively easily quickly with the right skill set and see some results
+and also I think just the the domain is expanding so the knowledge
+that's out there is more available uh people are learning about this and able to reproduce it easily on their own and
+then growing the field of knowledge as they do that so I think that paired with where we are today in this marketing and
+news and social media cycle we're seeing very impressive results from these models that are publicly available and
+they're being easily shared across social media there's some great examples
+showing you know wild successes of these and then also some successful or immense
+failures of these that are making uh you know news articles on either side of that and we love to share that and
+reporters love to dive deep and see if we can break things and then share how we broke it and it continues
+thank you thank you milosh um I I agree with what Ben shared but I
+would also like to add I think people creating um these environments have gotten smarter and have developed better tools
+um some of the language and programming capabilities that Chad GPT and others use did not exist in the past
+there's a lot of object-oriented languages that call certain libraries that are very massive very clunky take a
+lot of time to process and you were not able to produce these things so some of the languages and programming behind
+chat GPT specifically and many other AI examples were only released in 2020. so
+there are new ways new hyper-threading capabilities that increase the speed another thing that I would like to add
+is the vast amount of data that these models are trained on
+um increases anything that we've had in the past a lot of this is still AI
+labeled and branded when in practice it's really machine learning and
+there's a Nuance but there's a difference between data sets right so for machine learning uh model to have
+any intelligible intelligible insights it needs at least 30 000 data points
+this one has had millions or billions and obviously it's getting better the problem with that is
+um it brings other challenges into these environments that I think especially
+people in Academia need to be mindful and consider and learn and Lead these conversations as we move forward and
+those are certain biases in the code and the way data is referenced and provided back if you Google and look and research
+or if you go to chat and search about chat GPT you don't even have to go to Google maybe you can go to Bing because
+now Bing is partnering with them uh you'll get a lot of examples where Maybe
+um one politician is looked at one way versus another one political party versus another one I'm a big soccer team
+soccer fan one soccer team over another and those were biases that were quoted
+in by those engineers and developers which is why it's important to keep an interest of where it is where it's going
+the true AI capabilities are self-healing self-advancing
+self-improving and I don't think we're there yet at least we're not there what
+we see as general public what might be happening in the labs of top four tech
+companies might be a whole different story thank you Milos so you said something
+important this is machine learning not AI um anybody wants to elaborate on that
+and keep it simple
+it's a layup for Jared if he wants to take it I was gonna say it's more a question of uh how how long to go with
+um yeah I would say that's you know that's a gray area AI we sort of think about as the is the robot or the the
+iRobot uh you know the the classic um thinking but really like Mueller said
+almost all the products that we deal with on a day-to-day basis really are machine learning which essentially
+underlying them are statistical models and lots and lots of data uh to date you
+know I would argue chat GPT isn't sentient and whether sentience is really
+the goal of AI or not is debatable but I think really the the key to this model
+and all the other models we're seeing is there a good way to process a lot of
+information but they really truly lack creativity I
+think in the human sense of things and for me at least personally when I'm when I'm teaching a class talking about AI
+versus machine learning that's really the delineation forward-looking of AI versus machine learning for me there's
+we could get into debates about classical AI but that's not really the topic of our our talk today so
+statistical method a lot of information but still producing insights from data
+just one more point I want to add the labeling AI if you look at
+definitions sure it fits in but so does autocomplete on your iPhone right and
+how is that working out so natural language processing and how many times it gets you into trouble you're thinking
+you're typing something else in order to complete something to another word and you send it out uh Ben and I were in a
+conversation with a vendor and a partner several years ago who came in and was trying to pitch a product uh that was Ai
+and when we looked at it it was at the level of autocomplete and
+thesaurus and spell check and we wouldn't think of that as AI but in many
+Industries that's categorized as what's known as a lazy AI so groupings it fits
+under the umbrella but it may not be what most of us think when we hear those
+two letters thank you both and um I think we'll
+continue um into this a little bit I think uh a
+couple of you mentioned the fact that yes these are statistical uh
+statistically founded uh models that use lots of data and they pretty much
+analyze that data and generate seemingly things that that sound reasonable
+and we know that there are a number of issues with that including reproducing
+whatever biases and inequity and and issues that we have and uh two years ago timid
+Gabriel from Google Google ethicist was fired because she wrote the paper that
+is pointing to these so um so Lawrence can you help us a little bit understand what some of these issues are and there
+go ahead thank you um and I'm really I'm really glad that team Hebrew comes up I
+think those are her voice and voices of others are really important for us to
+think about those models in the different ways that Jared and Milos just when they describe them technically so
+Timmy Gibble wrote a paper co-authored actually a paper that wasn't even published it was just a draft and just
+for writing that draft she was dismissed by Google and she works on the ethics team which
+seems interesting to think about as well and essentially if if you get a chance
+to look at the paper it wasn't as much as a critique as just a series of questions that I think we need to ask
+ourselves one of them was about the carbon footprint and just listening to
+Jared at the beginning describing how those models work and how much resources they require I think that's something
+that we should think about so the whole point is to think how big are those models and what is too big right in
+terms of those models you alluded um to the massive data sets
+you know if we produce models that we cannot wrap our arms around it makes
+scrutiny that data and analyzing the data really really hard so that raises a
+lot of issues too and the paper alludes to the fact that maybe we should scale down and first build smaller models and
+develop them in a more ethical way another point that I thought is also really interesting if you're thinking
+about where it gets the data from it gets the data from the web right we all
+know that we live in a biased Society so who's represented who's not represented
+discriminatory languages biases but also linguistic communities so if you have a
+smaller linguistic footprint if I may say you're probably not going to be represented in those new models so those
+are the kinds of questions when I said at the beginning that I'm also interested in those technology uh in
+terms of what they mean for us as a society that yes that doesn't Vegas computer scientists but those are
+questions we all need to ask ourselves now especially in higher education institution intro so that we can shape
+conversation surrounding those tools and really thinking about what is it that we are interacting with and who's coded in
+and who's not coded in thank you so much um Laura so I remember
+one of the things that they mentioned in their paper for instance as um even so yes the voices that you find
+on these resources are not everybody's voices are definitely not equally distributed but even with that Society
+evolves but when you look at the sum of the archival data that you have you kind
+of erase that Evolution so there is some language that we used to use now we know
+it's very detrimental to some people we would not use it but that still remains in the uh in the archives the other
+things some people played with very unethical questions and get some answers
+for them um the one of their papers is intelligent parrot
+um and that's a little bit what these systems are in a way so I don't know if anybody wants to react to that
+yeah that was the title right of of the paper itself and just to build briefly
+on what you just said I think another point that that paper makes is the illusion of meanings
+which is also something I'm thinking you know Patrick
+in the writings and information literacy so all those questions were asked really early on and it's interesting to think
+how quickly they were dismissed or hidden or silenced yeah and Patrick shared very interesting
+references so good perfect sure well I admittedly um there's a lot
+of questions about the subject and I guess we should all reserve the right to change our minds as more information comes to light more examples just this
+morning I saw a vice article titled the school apologizes after using chat GPT
+to write email about mass shootings basically it was a condolences type email to their student community that
+was referenced at the bottom at use chat GPT and then the reaction was how dare you let a computer call for solidarity
+and community and it called out chat GPT as the author in some ways which is inherently problematic if we look at it
+as a way of generating content that then you manipulate change and revise it's very
+complicated to say that even using it can sort of affect the ethos of the speaker in that way and so the point I
+had made in our previous conversation was actually something that was brought up to me by a gentleman named Morton Rand Hendrickson and he was describing
+chat GPT as an excuse the language a generator that essentially what
+it does is it creates enough intention behind its meaning that it sounds very
+persuasive he described it as 90 accurate 100 confident that it is able
+to recreate the patterns of persuasion without having any interest in the truth and so that's essentially what gets the
+core of a lot of these things is the program is really good at sounding persuasive without really
+having anything that understands at the comprehension behind it as we have talked about there isn't really an intelligence behind this AI on that
+front so it's very complicated to then raise these questions of what it can be used for and what those limitations are
+in this example of writing a press release the fact that there was a response calling it out as essentially
+unethical or morally problematic to use it raises a host of questions because I think what the program is really good at
+is getting you started um there's a a writing scholar named Anne Lamont who talks about the
+essential part of the writing process being writing a shitty first draft something to get all your ideas out so
+you can revise them and that's a great step in the writing process and chat GPT can essentially do that step for you so
+but there are questions then about the kinds of writing where this might be problematic the example of a press
+release May not seem that dangerous or that worrisome but what if we were to use chat GPT to write wedding vows or
+appeal a parking ticket or write an obituary there are sort of questions that we have when we know that it's been
+used in the process about how much it created versus how much the author is sort of taking credit for and the answer
+is always that the author always has to take credit for what they put forth I think that's maybe at the heart of this
+is regardless of whether or not you use this at any stage of a writing process the end result is whatever you put your
+name on is essentially you representing those ideas as your own so I think it again I'm left with this feeling of my
+head is still swimming with all the questions that this raises every day there's a new article about it being used for this that the other thing and
+I'm left always wondering well where is that going to take us where does that path go and I think that it's important to have this conversation even though I
+feel like I'm lost with questions and have fewer answers especially when it comes to ethics
+questions are and um so there are definitely lots of ethical
+questions around this um and this weekend I was looking at a
+series of papers around the distinction between search or these models what's
+the difference and one of the differences is when you search you see the results but you see where they come
+from versus when you generate something like this it's it's packaged and it's packaged as truth as you said it's 100
+confident this is what it is and so there may be iterations of this that
+um that highlight where these things come from actually
+um so um I I do know that there are a
+number of um ethical issues and problems with something like this because of the
+potential misuses and the potential misunderstanding of these systems but I
+don't want us to lose sight of how exciting this is so I want to go back to milosh milosh
+get us all excited about this and tell us how wonderful this technology is it's
+as if you knew where I was gonna go so I would I would offer a slightly different perspective to what Patrick
+just shared I think it's accurate everything you've said is truthful however
+um painting anything but a single brush has historically always proven to be
+wrong anything anyone um I have ran a lot of queries in chat
+GPT and I've and I've tried to stick to things that I know things I've been doing for the last 25 years you know as
+they would say things I went to school for and uh and there was a lot of really
+good information there were some things that were not factual some things that were a little bit maybe out of date but
+there was a lot of interesting valuable information one of the first questions I asked being that we are in today's
+ever-changing world I said write me a press release on the value of higher education
+it was really well written it was very well written with some numbers and a
+couple of even references thrown in uh that could provide value on the other hand
+um I think we tend as people to romanticize things we're more comfortable with and to be fearful of
+the unknown I think we're starved as a population for more facts or less opinions or less
+Slants either way whichever way you want to look at it so if you look at ethics I would I agree there's a lot of ethical
+concerns that need to be taken into consideration with AI but I would extend that to many other things that have been
+part of our everyday lives for decades that we just take into for granted because it came from Joe must be truth
+and gospel well maybe maybe it's not so I think it opens larger questions and
+larger things that we need to consider I see it as a draft I see it as AI in
+general um I see it as helping us with some initial thoughts
+and ideas and creativity and saving time if we were to expand this into a lot of
+different things that we do um I would love to have ai capable
+Solutions across the university to take away mundane tasks from people that are
+completely mind-numbing if your job is to go in and click a particular button 97 times a day five days a week
+365 days a year or 180 whatever workdays there are I I just it strikes me as not
+that aspirational it's probably not the goal you've set for yourself in your life in your career so how do we move
+that to something else and enable truly scale human creativity and Innovation and intent and sentiment and emotions
+that technology cannot provide cannot replicate I think it has its place I
+don't think it's a silver bullet I don't think it's amazing I do think it's biased I've seen biases in different
+Industries I've seen incorrect information provided as well um but I would say let's figure out a
+way of how do we use it to have it work for us not the other way around
+thank you Corey we haven't gotten to you yet thank you very much and I'm going to try to be
+brief here because I know there are so many people here who have lots to say so let me just start by saying for me at
+this point Chachi BT is a Salient symbol it's an icon of the AI Revolution that
+is happening the AI systems and I'm talking about generative system free train systems and Transformer systems
+they've come together and they're proliferating at an Ever accelerating rate and so I from my own perspective
+I'm not really a pessimist about it nor am I optimistic about it I guess I'm more trying to be a realist about it
+that it's simply not going to go away that we have reached a watershed moment and I think we all need to realize that
+something equivalent to a Gutenberg level technology has been now introduced and uh I did put a list uh a linking to
+the spaces area of hugging face I would encourage anyone to go there and look at the thousands some different AI
+applications that are now available that are in beta stage and people can check it out so I guess I would say too in a
+lot of these Technologies if people look it's not just chat GPT there are countless other uh AI systems that do
+something very similar and there are many kinds of extensions overlaps plugins adaptions and sort of
+piggybackers on different kinds of AIS I think there's a sweeping cultural change
+that came in with Web 2.0 the social media over the last 15 years and I think
+we've all watched a pretty amazing transformation in the culture in the last 15 years from these social media
+sites my guess is that we're going to see even more sweeping transformation from these AI systems and it's going to
+happen at an even shorter time period it's going to be very disruptive very tumultuous let me say why I'm not a
+pessimist I'm going to say why I'm not an optimist and then I'm going to take the what I have is my takeaway for this first off I'm not a pessimist about this
+because I do think it shows that I've been particular chat GPD but we can talk about other systems very similar to this
+and I'm talking about it as it exists right now which I I believe is it's it's you know it's moving it's open to Bing
+it is now online so it the Technologies are changing but in general it offers
+the promise of Independent Learning of personal tutoring like if Newton was
+able to educate himself because of the printing press and it paved way for against Scientific Revolution and you
+know various forms of the Enlightenment thinking I think it is true that uh these kinds of Technologies potentially
+do make it possible for you know self-learning Geniuses to to really become quite informed about a lot of
+different things I guess I would also say it needs to be for me it really needs to be set in the context of the
+current environment that most young people are facing that is the diet the media diet the social media platforms
+that young people on uh this is the chat CPT is a welcome relief if they'd spend
+more time on that rather than their Instagram Facebook Snapchat this kind of stuff I really welcome it because and
+let me just say to speak about the medium itself there's no feeds there's no scrolling there's no pointing and
+clicking there's no Auto filling there's no autocomplete there's no images you have to go there you have to have a
+prompt or a question and if you don't have a prompt or a question you don't have anything to learn it just sits
+there with an and then you know an empty cursor and to that extent I think it really puts students in the right mode
+in orientation that they have to have questions or they're not really learning you can't just hang around getting you
+know tossed around on the web and you know the different kinds of scrolling and feeding okay that said I'm not an
+optimist about this to be to be quite Frank I think it has great potential for misinformation disinformation it's not
+only wrong it has oftentimes not that professors aren't often wrong as well but it goes wrong and it is not the
+professors aren't that as well uh but I think it does have lots of biases I think we all need to be honest that this
+is going to cost millions of people tens of millions of people their jobs over the next decade we may have to move very
+quickly on a tax system for those uh companies that employ massive AI systems
+we need to talk about how this is a radical extension of surveillance capitalism I think shoshana zubov's work
+was on everybody's mind and now that's been brushed under the rug and it needs to come back with more scrutiny because
+these are extending these processes I think it also is going to have an increase in social inequality there will
+be an AI divide that we'll have to talk about about those who can afford these Technologies who can use them versus
+those who cannot uh there will be a massive disruption and I think some of it has to do with what I would call a
+cognitive offloading leading to atrophy of capacities so there's a sense in which the more that people rely upon
+other things to do their work they become less competent and skilled at that it's what McLaren called Auto
+amputation let me just end here with what I what the takeaway is for me uh
+for me this has created a very robust context for all of us to reflect back on
+what we do as professors to talk about re-emphasizing and reasserting the value and the importance of liberal arts
+education it's never been enough to just do Technical Training but it will
+certainly be less and less to just be able to do Technical Training in today's world we're going to need to focus as we
+always have been but in a reasserted way on critical thinking raising questions studying good books The Art of reading
+becoming familiar with history and others building vocabulary and I guess increasingly assessing outputs so thank
+you
+so thank you so much Corey there was so much in there I don't know where to start
+um but I'll maybe I'll start here and I'm I'm watching some of the questions about
+um about what do we do in terms of education and actually the the next question that I was planning was how
+does this impact our notion of authorship but let me maybe
+um maybe start with the question of um of you mentioned that liberal
+education is is important here and I I think we have to we have to help students and everybody understand why
+what's the relationship here and uh we are inviting a guest speaker next month
+um uh Dr Byron white and um one of the the topic of his talk is around the fact
+that our mission as universities is not to deliver knowledge but to help
+students navigate knowledge and I think Chad GPT kind of pushes that
+so much in the sense that yeah if they want knowledge they can get it everywhere but um the the information
+literacy being able to discern with is true what is not what is
+what you is trustworthy and what is not what is biased what is not becomes
+extremely important um so but then the question how do we do
+that uh so so definitely this is this uh this pushes against us to figure out
+okay with um this is pushing the boundaries and forcing us to face the fact that what
+students want from us is more than giving them the information now now it's
+our job has become much harder um but one of the comments put on on the
+chat is that there is a claim that maybe 100 or hundreds of books that are on
+Kindle actually were fully or partially written by Chad GPT
+um I don't know where that comes from but um uh maybe Corey or Corey and Pat if
+you can comment on that a little bit on the notion of authorship so we we're
+really very um we're very attached to the notion that what region intellectual property
+what we write is our own is the products of our own brains and this this disrupts
+it a little bit if you can comment on that um I'll be really briefly here I'll be
+really brief there Patrick um I guess I would say that for my own again my own perspective here the question of authorship and intellectual
+property we need to step back and see it from a large historical perspective that authorship didn't exist in the oral
+tribal in the ancient world it certainly didn't even exist in the medieval period you know I think we think of people like
+Aristotle as an author well you know there was no way to create identical copies and to distribute them in Mass
+markets they're the you know the notion of authorship as we understand it today was really it's a an outcome of the
+printing press and it there's a kind of romantic individualism a notion of one sitting down and expressing one's
+thoughts and you know making them available to the masses and there that may be that this is a uh a certain
+moment in time where authorship will will become increasingly uh pushed to the side as people become more and more
+editors than than they are authors I think on the other hand though there is real concern over the attempt to
+conserve and preserve style and to demand that people do learn the basics I
+think if we were having this discussion in the grade school or High School we'd really have to be forcing the issue that people need to be able to compose and
+construct thoughts without the assistance of the machine you know I think sometimes people talk about this
+as the original bank if you go look at some of the the different discussions on this that there's a concern that there
+is an original Bank of human human created information and anything after
+say 2019 is now going to be partly infiltrated with AI generated stuff and
+because the AI is able to generate the stuff very rapidly you could have a kind of poisoning the well as it were as the
+machine you know starts to scrape more and more data that's coming from its own uh output so I think there is a concern
+of returning to the Integrity of originally created stuff well there also is Maybe we're going to have to have the
+Nostalgia for this romantic authorship it may we may see it just decline in our
+lifetime yeah and there's certainly there's a lot you raised other hunger great points and
+I think for as Fatma had reference uh the concept of ownership is very not
+saying it's only American but it is a priority in the American system the idea that not only do you have to cite
+sources to recognize the contributions of others but also how you stand apart from them but just the the need that we
+have I think to say that an idea started somewhere that someone gets credit for them a lot of that's going to be
+destabilized by this it's already inevitable I think that that many other countries look at ideas as more communal
+that they're all sort of shared and we all have equal access to them I think this is much more and leaning that
+direction than it may be towards the sort of American concept of ownership in some of those ways
+um this is a small tangent but related it was a question that one of my writing Consultants had asked named Caitlin who
+said can she major in ghost writing I think it's an interesting comparison because ghost riding is technically a
+lucrative career and yet it is defined by its anonymity and so what's interesting about this is so much of
+what we're talking about here is ghost writing can exist in a professional Circle without politicians using it for
+speech writing or writing books businesses using it to put out information that ghost writing sort of exists in the professional circles and
+yet it's a very different read and how it plays in an educational Circle that we put a premium on you creating the
+idea as a demonstration of learning so I think it's complicated to say that ghost
+writing is the the one-to-one comparison here but it does destabilize this concept of who creates an idea who takes
+credit for an idea whose name is on what is being submitted or put out into the world
+and it certainly relates to the writing process because um in looking at it MLA APA in Chicago
+there are debates right now about how they cite it the example I mentioned earlier from the vice article is very
+much the APA which is to site chat GPT as a personal communication that essentially you're citing it as I talked
+to this program and it had some ideas that I'm going to paraphrase here that's interesting because that doesn't seem to be the strength of chat GPT is something
+you'd use for direct quotes it's much more generative to give you sort of information that you can revise and
+sculpt but this idea of citing it as something you talk to somebody about feels very interesting and different
+maybe from how we're talking about the generation of information um and I guess I also might extend this
+a little bit further that in terms of how we talk about the writing process we don't usually ask students to disclose
+their process we don't ask if they use grammarly or went to The Writing Center or worked from Professor feedback or
+used a mentor text and yet a lot of these conversations are saying that we do want to know if you used chat GPT in
+the creation and that is maybe inherently problematic to say that we're asking students to tell us their writing
+process so we can evaluate it over the product I think in The Writing Center we're all about process we don't deal
+with the product as much as we help you get from one step to the next but it's interesting to say that this program gives you the middle
+step it basically moves a lot of the student effort to the extremes as Corey had mentioned the effort on the student
+end is going to be developing The Prompt the pre-writing exercise needed to what you want to ask what you're hoping it can give you then it will give you
+something that then all the effort goes at the end of the process right now you have to double check the resources make
+sure that your own voice is represented evolve it into something that represents you so that idea of moving the student
+efforts to the extremes feels like it destabilizes everything but it really doesn't have to I think again the idea
+of it generating information for you to work from is a tremendous useful tool to Pat much of your question I am excited
+about it anyone who hasn't played with it please get on and play with it it will blow your mind all the things it
+can do especially if you have tasks that you don't even know how to approach see what it will give you and then take it
+the next step I think that that's really where I think if you ask students to use this program it is always as a starting
+point never as a finish that's what everyone's fear is that students will use it take whatever it gives you and turn it in whole cloth but the other
+comparison I might make is to something like Wikipedia when Wikipedia first came out I remember there being a lot of
+conversations in academic circles about it ending the research process that why would you ever need to go to the library if everything's on Wikipedia and what
+ended up happening was faculty developed better assignments clearer expectations and developed the idea of saying
+Wikipedia is a great place to start but a terrible place to end a lot of that is true with chat GPT in terms of the writing process
+can I just say a quick follow-up on that I mean I think it might be and I I don't
+really want to disagree with what you're saying Patrick I mean I do think that we're in a time of absolute change and
+so I think we're all going to have to think about protocols and what are standards and how are people different
+professors understanding what other people are doing there but I think there is there is maybe uh and importance in
+having a wide range of different capacities and competencies and
+evaluation systems within a class whether that includes oral presentations and written exams in class also
+including AI systems I mean the whole gamut whereas I want to sort of lessen the Reliance upon it and just take it as
+inevitable but to talk about the importance to have a a wide swath of
+different evaluation methods increasingly because I I do think some people are going to become quite Reliant
+upon it and we're going to see some pretty significant atrophy and capacities if we don't keep that in
+check so thank you so much at the introduction of this I said that
+um that this is a very vast topic and there is no way we're going to go around all of it and uh and really the idea is
+to start generating some of the questions and in that respect I'm really thrilled to hear all of these and and
+right now they're all competing in my mind what do I take next and I'm reading the questions that are coming that are
+aligned a little bit with some of the thoughts that we're having um so um
+and before moving to the next question actually uh this is something I think I
+uh I discussed it with milosh in the sense that yes right now it's free anybody can go ahead and compute and
+create an account will it remain free that remains to be uh to be seen
+especially given the cost given the carbon footprint given the amount of competition and why would they make it
+available for free so there is an equity inequity component that will come out of
+that um what I find very interesting is the
+is that how the conversation about this very high tech system came down to our
+value with the whole the underlying Assumption of our society of the notion of ownership of the notion of uh of
+where ideas come from and somebody in the in the chat in the Q a said what do
+our philosophy professors uh think which I think Corey mentioned the importance
+of um of liberal education here I think these are very important topics in the
+sense that as I said this is putting pressure on us as faculty
+um and um and forcing us to raise some questions that we we weren't even in the
+radar um the other thing that um and and uh in
+a discussion with Jared we we shared the fact that in computer science we have been struggling with this issue because
+with GitHub every piece of code that has been generated is available out there so
+when we give an assignment to students and they go and find it and bring it we're we're stuck and it forces us to
+rethink what do we ask them to do it's not necessarily um give me a piece of code AS Patrick
+has mentioned it's the process that we're interested in and how do we how do
+we help them create that process and I'll mention one more thing and then
+um I want to give you all um uh close a time for a closing remark
+um and now I forgot what was that other thing so so maybe um if we can um if there is anything
+that you'd like to say and during that time I will also look if there is any additional uh think that we want to any
+additional questions that we want to share maybe start again with Corey
+I guess I'll say uh I appreciate the opportunity to work with everyone here and thank you very much for putting this
+together I I found this to be quite a rabbit hole and the more I get involved
+in it it's almost the less I'm interested in learning I mean if you want to go explore the
+non-digital Arts I'm a juggler it makes me want to juggle more it makes me want to go and have conversations with people
+uh face to face uh it makes me want to again like as a corrective encounter
+balance to some of the AI uh to to re seed to what extent we can reinvest a
+face-to-face community and uh integrate these kinds of Technologies and take what they have to offer without letting
+it sort of overwhelm us and consume us I think we need to find the right balance so thank you again
+Patrick uh yes thank you again for uh allowing me participate in this conversation I
+look forward to wearing where it goes next um in our initial conversation one thing that could come up was
+um a book by Stephen Johnson called Everything Bad is good for you and he asked the question who's better at chess computers or humans and the answer is
+always the collaboration is always strongest that humans and computers have very different skill sets and very different abilities that working
+together is always going to be superior to one or the other and that's what I guess where I look at how I look at this program even though I have a lot of
+questions and concerns about maybe where it goes the end result is I think humanity and education will adapt to use
+this program effectively and we do have to sort of lean into what it allows us to do we have to teach students to ask
+better questions we have to evolve our assignments to ask more of students that something that would be on with chappy
+GPT can create but also leaning into what it can allow students to do better I think that it's a tremendous
+opportunity even if it is inevitable that it's going to cause change which is disruptive and problematic in a lot of
+ways yeah Lawrence yes thank you again for allowing me to
+participate and one thing that was on my mind too when we were talking about how it gives us opportunity to maybe
+automate tasks that are not creative I was just thinking and maybe this is random about writing minutes of meetings
+right that would be a great you could say okay I'm just gonna rely on that tool but also as someone who has been
+writing a lot of meeting minutes this past semester this is also sometimes an opportunity for me to remember who said
+what to process information so even just thinking more carefully about what it means to write which goes back to
+Patrick's Point about process and help us think more carefully about than
+information literacy helping students understand why we ask them to write something going back to
+Corey's point then regarding the assignment anything that is reflective where we ask students to draw lessons
+and apply to themselves that the tool cannot do so if we get if that tool
+becomes an opportunity for us to emphasize those kinds of assignments and processes in the classroom that's great
+so that's me being optimistic do I have some fears yes because I think also
+information literacy is becoming increasingly difficult to teach to students because most of those systems
+they're designed to be used in an easy way right it's very easy to
+use and the easiest interface is the more it conceals so looking in the
+background opening the black box of Technology it's becoming increasingly difficult what at least takes more
+efforts so in terms of the liberal arts just going back to the general context
+in which we are discussing I think what it pushes us to do and that's to me is great news is that we need to keep the
+stems and Humanities oriented discipline connected and intersected so that we can
+keep shaping conversations and not just reacting on whatever the tech world is
+pushing out because they're gonna keep pushing out amazing exciting tools that
+we don't just want to be in a situation where all we do is react to it
+thank you Ben so I think if anything we've heard today
+how far this has come in a short time but also how important will it be to keep an eye on this where it'll grow by
+Leaps and Bounds you know month by month from here on and I think always having an awareness of what this is will help
+in the conversation so this is a great first step I think what we're what we're watching for in it is where where this
+goes there's a whole industry that wants to pop up to help higher ed and how to
+use and look for chat GPT generated text in in writing but if we go into that you
+know there's already chat GPT plus that will likely be anything they could find Chad GPT so it's a constant cycle it's
+likely not going to be something that we can find a product or a service that would uh get us out of some of the
+concerns so incorporating it into how how we're going to deal with that is important and then on the vendor side
+you know Imagining the benefits of how this could be used in a certain domain turning autocomplete into an auto
+response for an email but then the security side of that is you're turning over an email to be a prompt for a
+response so there there's a lot of cyber security risks that we're watching for so fascinating to see where this is
+going to go it's exciting uh and concerning all at the same time so great to be a part of this today
+thank you chair yeah I guess uh as closing I
+I had a student here in my office yesterday a CS major who sat down and he
+he said you know what do I what do I do now that Chad gpt's out and it it causes
+angst in our students right um this came out it came on our radar late
+November December and it has only grown since then and the thought initially was I mean even myself was like am I going
+to be able to do this job until I'm 60 now or not you know it's am I out of am I out of it
+at the end of the day though when I when I really sat down and thought about it you know within our Computing Majors
+um as Fatma alluded to earlier in the first year we teach students to program and probably a lot of people
+that are outside the Computing discipline say what do computer scientists do oh they program they're software engineers and so they learned a
+program they spent four years learning to program but the reality is after the first year it's not so much learning to
+program anymore it's systems thinking it's the ability to take a complex problem break it down into the steps
+architect a solution make connections between software that's already existing out there is Milos alluded to and and
+stitching these things together and if you almost look at any of our Majors
+across the entire University whether it's a stem field like chemistry or whether it's something like art where
+the fundamentals are taught in the first year but then all the things that I don't understand but in terms of you
+know what is what does art mean and what does it mean societally and how how do those commentaries work right we're
+educating students here for critical thinking we're educating them for problem solving we're we're elevating
+their intellectual capacity and so I told the student you know does chat gbt simplify some of your job
+yeah it's great at writing really basic code but at the end of the day a company is not hiring you to write basic code they
+might hire you as an intro software developer but very quickly you're going to move up and that's true for any major we have
+here so you know that initial angst I had has really dissipated because it's a
+tool it's another tool in our tool set and learning to use it properly is going to be the important thing for any
+students and the one thing I will end on that I think this is uh referring back
+to Patrick and Lawrence you mentioned this as well is humans in the loop so
+one thing that I left out of chat GPT here is in fact the um it's called reinforcement learning with human
+feedback so Chad GPT was trained on the internet which is problematic
+to say the least um there was a company in Kenya actually that was hired by openai to have humans
+provide feedback to the model to further train it and that eliminated a lot of
+the initial bias that that normally we would see pop-up in AI systems you can still drill down into it but it's
+actually pretty hard with Chad GPT and so you know these AI tools are great but
+when humans are involved they're even better and as humans we're really good at getting at those bias issues and
+things like that it's on us as instructors I know in the question questions there's been a few that way
+it's on us to really develop an appreciation in students and a concern about those issues but being aware of it
+I think we can we can do that and that's what we're here's the university to do so our remain fairly positive about it
+and I'll say that Bing seems to have avoided the human in the loop feedback if you've seen any news stories with
+that and I'll leave with that thank you and milosh I think we all need to take a deep
+breath and exhale right collectively it's a tool if you look at Chad GPT or
+if you expand it broadly across series of AI tools their tools depending on how
+they're coded developed design implemented how much bias they bring forward
+it can be bad ugly and in some cases can actually be good and valuable
+I believe in the human human spirit and existence and resilience and intelligence that we have at some point
+we all went to work or we had different jobs we all went to work on a horseback and that model T rolled off an assembly
+line and we adjusted calligraphy changed when printing press came out and
+we have so many examples through histories where we adjusted adapted use these tools for our own benefit
+um and advancement as we move forward I do believe that an area that we haven't talked about are is legal compliance and
+policy legal is generally and as someone who's married to as she refers to
+herself as a recovering attorney um legal field is always decades behind
+Tech and I think there are areas that we need to get caught up when it comes to how
+things are used what can be turned in into and what are the vetting processes outside these companies who are
+developing these tools to look for um integrity and Clarity of product I
+think it's exciting I think it's not going away um I don't think any industry or any
+profession has a luxury to ignore ignore it um no I used to live right outside New
+York City no one can convince me the New York City Cab Company could have not had an app they chose not to and then Uber
+and Lyft and others came out right well the Marriott could have not had Airbnb concept
+competition is here it's not going away Innovation is going to keep moving forward we've got to find a way what's
+our rightful place how do we lead how do we influence and how do we make it work for us and with us
+thank you so much everyone this has been a very rich and interesting conversation I really enjoyed it
+um thank you so much for everyone who has attended I have been watching the Q a
+um the questions have come not a yes no question but very elaborate question
+that I thought I it wouldn't I wouldn't do them Justice by reading them and
+answering them on the Fly uh we have and Mary has created the page for this uh
+seminar in which we will list three sources and we will see what to do with the questions that we have not answered
+we'll definitely look at them process them and hopefully uh generate something
+out of them thank you so much everyone have a great day stay safe stay dry
+bye-bye
